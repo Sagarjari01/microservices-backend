@@ -56,10 +56,10 @@ Apply json patch to a json object, and return the resulting json object.
  2. Set the key ```document``` to an object you would like to patch. Set the key ```operation``` to the object you want to use to patch the ```document```.
  ```
  Examples:
- jsonObject
+ document
  { "firstName": "Sagar", "contactDetails": { "phoneNumbers": [] }},
 
- jsonPatchObject
+ operation
  { "op": "add", "path": "/contactDetails/phoneNumbers/0", "value": {"number":9889889889} }
  ```
  3. Since this is a secure route, for testing, you will have to set the token in the ```Header```. Set key as ```token``` and value as token you received from **Authentication**.
@@ -71,7 +71,7 @@ Apply json patch to a json object, and return the resulting json object.
         "contactDetails": {
             "phoneNumbers": [
                 {
-                    "number": 6352996900
+                    "number": 9889889889
                 }
             ]
         }
