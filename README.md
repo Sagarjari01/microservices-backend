@@ -31,7 +31,7 @@ npm install
 
 **4.**  The app gets up and running on port 3000 with ```npm start```.
 
-**5.**  **Important** Create a ```.env``` file and set ```JWT_SECRET``` to any secret phrase you want, set ```API_URI = /api/v1```.
+**5.**  **Important** Create a ```.env``` file and set ```JWT_SECRET``` to any secret phrase you want, set ```API_URI = /api/v1``` and for mongoDb database use your connection url and set ```MONGO_URI``` key to your url.
  
 
 ## Testing the API routes.
@@ -94,3 +94,22 @@ This request contains a public image URL. It downloads the image, resizes to 50x
 ```
 
  ### Adding User address in database
+This will create a request to add a user address and save it into the database.
+ 1. Set the request to **POST** and the url to _/api/v1/add-address_.
+ 2. Set the key ```address``` to your address.
+ 3. Since this is a secure route, for testing, you will have to set the token in the ```Header```. Set key as ```token``` and value as token you received from **Authentication**.
+ 4. This will return object of user like given below. Since logged-in user is authenticated so the username will be apper from that authentication and address will be updated.
+
+```
+ {
+    "user": {
+        "_id": "637cc4c326c32a8cd4d581ad",
+        "name": "elumi",
+        "address": [
+            "New address",
+            "New address 2"
+        ],
+        "__v": 0
+    }
+ }
+```
