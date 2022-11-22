@@ -37,7 +37,7 @@ router.post('/add-address',authenticate,(req,res)=>{
 })
 
 // json patch for object
-router.post('/patch',authenticate,(req,res)=>{
+router.patch('/patch',authenticate,(req,res)=>{
     let {document ,operation } = req.body
     let updateddoc= jsonpatch.applyOperation(document, operation).newDocument;
     if(updateddoc){
@@ -47,7 +47,7 @@ router.post('/patch',authenticate,(req,res)=>{
 })
 
 // create thumbnail of 50x50
-router.get('/thumbnail',authenticate,(req,res)=>{
+router.post('/thumbnail',authenticate,(req,res)=>{
     const {imgUrl} = req.body
     let imgExtension = get_url_extension(imgUrl)
     let original = path.join(__dirname,'..','imgs','original')
