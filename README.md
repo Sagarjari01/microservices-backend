@@ -1,6 +1,6 @@
-# Stateless Microservice for Hackerbay
+# Stateless Microservice
 
-A simple stateless microservice in Nodejs, with three major functionalities -
+A simple stateless microservice in Nodejs, with four major functionalities -
 
  * Authentication
  * JSON patching
@@ -29,7 +29,7 @@ cd server
 npm install
 ```
 
-**4.**  The app gets up and running on port 3000 with ```npm start```.
+**4.**  The app gets up and running on port 7000 with ```npm start```.
 
 **5.**  **Important** Create a ```.env``` file and set ```JWT_SECRET``` to any secret phrase you want, set ```API_URI = /api/v1``` and for mongoDb database use your connection url and set ```MONGO_URI``` key to your url.
  
@@ -83,7 +83,7 @@ Apply json patch to a json object, and return the resulting json object.
  ### Image Thumbnail Generation
 This request contains a public image URL. It downloads the image, resizes to 50x50 pixels, and returns the resulting thumbnail.
  1. Set the request to **POST** and the url to _/api/v1/thumbnail_.
- 2. Set the key ```imageUrl``` to a public image url.
+ 2. Set the key ```imgUrl``` to a public image url.
  3. Since this is a secure route, for testing, you will have to set the token in the ```Header```. Set key as ```token``` and value as token you received from **Authentication**.
  4. Image will be downloaded and converted to a thumbnail of size 50x50 pixels with a sample result as below:
  ```
